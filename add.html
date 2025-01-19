@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarePlay - Add Question</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Animasi Ornamen */
+        .floating {
+            animation: floating 8s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Efek Hover pada Tombol */
+        .btn-hover:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Dropdown Styling */
+        select.custom-select {
+            background-color: #f9fafb;
+            color: #4a4a4a;
+            border: 2px solid #ddd;
+            font-size: 1rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            outline: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        select.custom-select:hover,
+        select.custom-select:focus {
+            border-color: #7c3aed;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ornamen Latar */
+        .ornament {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: floating 10s linear infinite;
+        }
+
+        .ornament-purple {
+            background: #7c3aed;
+        }
+
+        .ornament-blue {
+            background: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-900 via-indigo-800 to-blue-600 text-white min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
+    <!-- Ornamen Latar -->
+    <div class="ornament ornament-purple w-64 h-64 top-10 left-10"></div>
+    <div class="ornament ornament-blue w-80 h-80 bottom-10 right-10"></div>
+    <div class="ornament ornament-purple w-48 h-48 top-1/4 right-1/4"></div>
+
+    <!-- Konten Utama -->
+    <div class="bg-white shadow-2xl rounded-3xl p-8 md:p-12 w-11/12 max-w-lg text-center z-10 relative">
+        <h1 class="text-4xl font-bold text-purple-700 mb-6">Add New Question</h1>
+        <form id="add-form" class="space-y-6">
+            <!-- Dropdown Mode -->
+            <div>
+                <label for="mode" class="block text-lg font-medium text-gray-700 mb-2">Choose Mode</label>
+                <select id="mode" class="custom-select w-full">
+                    <option value="Truth">Truth</option>
+                    <option value="Dare">Dare</option>
+                </select>
+            </div>
+            <!-- Input Question -->
+            <div>
+                <label for="question" class="block text-lg font-medium text-gray-700 mb-2">Enter Question</label>
+                <input id="question" type="text" placeholder="Type your question..." class="border border-gray-300 rounded-lg py-3 px-6 w-full focus:outline-none focus:ring focus:ring-purple-300 text-gray-800">
+            </div>
+            <!-- Tombol Aksi -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <button type="button" id="save-btn" class="bg-purple-500 text-white py-3 px-8 rounded-lg hover:bg-purple-700 transition-all btn-hover">
+                    Save
+                </button>
+                <a href="game.html" class="bg-gray-200 text-gray-700 py-3 px-8 rounded-lg hover:bg-gray-300 transition-all btn-hover font-semibold">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="js/script.js"></script>
+</html>

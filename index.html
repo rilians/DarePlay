@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarePlay - Play & Enjoy</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Animasi Rintik Hujan */
+        .rain-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .rain-drop {
+            position: absolute;
+            top: -10px;
+            width: 2px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            animation: fall 1.5s linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        /* Random Animasi */
+        .rain-drop:nth-child(odd) {
+            animation-duration: 1s;
+        }
+
+        .rain-drop:nth-child(even) {
+            animation-duration: 2s;
+            animation-delay: 0.5s;
+        }
+
+        /* Hover efek card */
+        .card {
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-image: linear-gradient(45deg, #ff9a9e, #fad0c4) 1;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-800 via-indigo-700 to-blue-500 text-white relative overflow-y-auto">
+    <!-- Animasi Rintik Hujan -->
+    <div class="rain-container">
+        <div class="rain-drop" style="left: 10%;"></div>
+        <div class="rain-drop" style="left: 30%;"></div>
+        <div class="rain-drop" style="left: 50%;"></div>
+        <div class="rain-drop" style="left: 70%;"></div>
+        <div class="rain-drop" style="left: 90%;"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="w-full flex justify-between items-center py-4 px-8 fixed top-0 left-0 z-50 backdrop-blur-lg bg-opacity-30 bg-gray-800">
+        <h1 class="text-3xl font-extrabold tracking-widest">DarePlay</h1>
+        <div class="flex gap-6 text-lg font-medium">
+            <a href="index.html" class="hover:text-yellow-400 transition">Home</a>
+            
+            <a href="about.html" class="hover:text-yellow-400 transition">About</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="flex flex-col items-center justify-center text-center min-h-screen px-8 pt-32">
+        <h1 class="text-6xl font-extrabold mb-4 leading-tight drop-shadow-lg">
+            Ready to<br>
+            <span class="text-yellow-400 animate-pulse">Discover?</span>
+        </h1>
+        <p class="text-xl font-light max-w-2xl mx-auto mb-8">
+            DarePlay combines fun challenges and honest truths to bring you closer with friends and family.
+        </p>
+        <a href="game.html" class="bg-yellow-400 text-black py-4 px-12 rounded-full text-lg font-bold shadow-lg hover:bg-yellow-300 transition-all transform hover:scale-105">
+            Play Now
+        </a>
+    </section>
+
+    <!-- Features Section -->
+    <section class="relative z-10 mt-20 px-8">
+    <h2 class="text-4xl font-bold text-center mb-12">Why DarePlay?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Feature 1 -->
+        <div class="bg-white text-gray-800 rounded-lg shadow-lg p-6 flex flex-col items-center transform hover:scale-105 transition card">
+            <img src="assets/illustrations/thinking.svg" alt="Truth Icon" class="mx-auto mb-4 w-32">
+            <h3 class="text-2xl font-bold text-center mb-2 min-h-[48px] flex items-center">
+                Honest Truths
+            </h3>
+            <p class="text-sm text-center leading-relaxed min-h-[64px] flex items-center justify-center">
+                Dive deep into intriguing questions that will uncover secrets and stories.
+            </p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="bg-white text-gray-800 rounded-lg shadow-lg p-6 flex flex-col items-center transform hover:scale-105 transition card">
+            <img src="assets/illustrations/celebration.svg" alt="Dare Icon" class="mx-auto mb-4 w-32">
+            <h3 class="text-2xl font-bold text-center mb-2 min-h-[48px] flex items-center">
+                Exciting Dares
+            </h3>
+            <p class="text-sm text-center leading-relaxed min-h-[64px] flex items-center justify-center">
+                Take on thrilling challenges that will bring fun and laughter to any group.
+            </p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="bg-white text-gray-800 rounded-lg shadow-lg p-6 flex flex-col items-center transform hover:scale-105 transition card">
+            <img src="assets/illustrations/creativity.svg" alt="Custom Icon" class="mx-auto mb-4 w-32">
+            <h3 class="text-2xl font-bold text-center mb-2 min-h-[48px] flex items-center">
+                Your Game, Your Rules
+            </h3>
+            <p class="text-sm text-center leading-relaxed min-h-[64px] flex items-center justify-center">
+                Add your own Truths and Dares to customize the experience!
+            </p>
+        </div>
+    </div>
+</section>
+
+    
+    
+
+    <!-- Call-to-Action Section -->
+    <section class="relative z-10 mt-24 text-center py-16 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-black">
+        <h2 class="text-4xl font-extrabold mb-6">Start Your Journey</h2>
+        <p class="text-lg font-light max-w-2xl mx-auto mb-8">
+            Are you ready to play the ultimate Truth or Dare game and create unforgettable memories? Let’s go!
+        </p>
+        <a href="game.html" class="bg-black text-yellow-400 py-4 px-12 rounded-full text-lg font-bold hover:bg-gray-800 transition-all transform hover:scale-105">
+            Play Now
+        </a>
+    </section>
+</body>
+</html>
